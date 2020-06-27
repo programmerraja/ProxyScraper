@@ -8,7 +8,7 @@ class ProxyScraper():
 		#free proxy getting site 
 		self.plink="https://free-proxy-list.net/"
 		#which website we want to reach using proxy
-		self.dlink="https://home-cash.work/?ref=5R8CHfUKd"
+		self.dlink="your link "
 		#array used to store proxy detaills
 		self.proxy_array=[]
 		self.getProxy()
