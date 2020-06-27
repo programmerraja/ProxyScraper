@@ -11,10 +11,10 @@ class ProxyScraper():
 		self.dlink="https://home-cash.work/?ref=5R8CHfUKd"
 		#array used to store proxy detaills
 		self.proxy_array=[]
-		self.getproxy()
-		self.vistwebsite()
+		self.getProxy()
+		self.scrapWebsite()
 
-	def getproxy(self):
+	def getProxy(self):
 		html_code=r.get(self.plink)
 		proxyscraper=soup(html_code.text,"html.parser")
 		table = proxyscraper.find("table")
@@ -35,18 +35,20 @@ class ProxyScraper():
 
 			
 	
-	def vistwebsite(self):
+	def scrapWebsite(self):
 		random .shuffle(self.proxy_array)  
 		try:
 			for i in range(0,10):
 				if(i<=len(self.proxy_array)):
 				  proxy=self.proxy_array[i]
+				  #write you own code for scrap a website 
 				  res=r.get(self.dlink,proxies={"http":proxy,"http":proxy})
 				  print(res)
+				  #sleep function to call after few sec
 				  time.sleep(random.randint(0,10))
 		except Exception as e:
 			print(e)
 
 
 
-ProxyScrapper()
+ProxyScraper()
