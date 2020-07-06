@@ -26,10 +26,10 @@ class ProxyScraper():
 			#getting port number from table 
 			port=row.find_all("td")[1].text
 			#getting if it is  number from table 
-			ishttps=row.find_all("td")[5].text
-			#checking if it has https
-                        self.proxy_array.append("http://"+proxy+":"+port)
-                   
+			#now the website dont have this option 
+			#ishttps=row.find_all("td")[5].text
+			#assign all proxy as http by default 
+			self.proxy_array.append("http://"+proxy+":"+port)
 			#if(str(ishttps)=="yes"):
 				#self.proxy_array.append("https://"+proxy+":"+port)
 			#else:
